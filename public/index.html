@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice AI Agent</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212; /* Dark theme */
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+
+        /* Title */
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Status text */
+        #status {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        /* Mic button style */
+        #startBtn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background-color: #2196f3;
+            box-shadow: 0 0 20px rgba(33, 150, 243, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+        }
+
+        #startBtn svg {
+            fill: white;
+            width: 30px;
+            height: 30px;
+        }
+
+        #startBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(33, 150, 243, 1);
+        }
+
+        /* Recording animation */
+        .recording {
+            animation: pulse 1s infinite;
+            background-color: #e53935 !important;
+            box-shadow: 0 0 20px rgba(229, 57, 53, 0.8) !important;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(229, 57, 53, 0.8); }
+            50% { transform: scale(1.1); box-shadow: 0 0 35px rgba(229, 57, 53, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(229, 57, 53, 0.8); }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Title -->
+    <h1>Talk to AI</h1>
+
+    <!-- Status text -->
+    <div id="status">Click mic to begin</div>
+
+    <!-- Mic Button -->
+    <button id="startBtn" class="idle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2z"/>
+        </svg>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
